@@ -1,4 +1,4 @@
-# Repositório destinado aos estudos do framework React + Vite and Tailwind CSS
+# Repositório destinado aos estudos da bilbioteca JavaScript React + Vite and Tailwind CSS
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
