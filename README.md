@@ -1,6 +1,6 @@
 # Repositório destinado aos estudos da biblioteca JavaScript React + Vite and Tailwind CSS
 
-## `React:` Biblioteca JavaScript
+## `React:` Biblioteca JavaScript de código aberto para construir interfaces de usuário (UI)
 ## `Vite:` é uma ferramenta de construção de projetos front-end que visa oferecer uma experiência de desenvolvimento mais rápida e eficiente para aplicações web modernas
 ## `Tailwind CSS:` Tailwind CSS é um framework de CSS que adota uma abordagem utility-first, permitindo criar interfaces modernas diretamente no HTML. 
 
