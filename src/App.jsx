@@ -1,7 +1,8 @@
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import { useState } from "react";
-import { Delete } from "lucide-react";
+import { v4 } from "uuid";
+
 
 function App() {
   const [tasks, setTasks] = useState([{
@@ -17,6 +18,17 @@ function App() {
     isCompleted: false
   }
 ]);
+
+  function onAddTaskSubmit(title, description){
+    const newTask = {
+      // v4() gera um id único para cada tarefa
+      id: v4(),
+      title: title,
+      description: description,
+      isCompleted: false
+    };
+    setTasks([...tasks, newTask]);
+  }
 
   function onTaskClick(TaskId) {
     const newTasks = tasks.map(task => {
@@ -34,7 +46,7 @@ function App() {
     setTasks(newTasks);
   }
 
-  function onAddTaskClick(){
+  /*function onAddTaskClick(){
     const newTasks = [...tasks,{
       id: tasks.length + 1,
       title: `Nova Tarefa ${tasks.length + 1}`,
@@ -42,17 +54,16 @@ function App() {
       isCompleted: false}
     ];
     setTasks(newTasks); 
-  }
+  }*/
 
   return(
     <div className="w-screen h-screen bg-slate-500 flex  justify-center p-6">
-      <div className="w-[500]">
+      <div className="w-[500] space-y-4">
         <h1 className="text-slate-100 text-3xl font-bold text-center">Gerenciador de Tarefas</h1>
-        <AddTask />
+        <AddTask onAddTaskSubmit={onAddTaskSubmit}/>
         <Tasks tasks={tasks}
         onTaskClick = {onTaskClick}
         onDeleteTaskClick = {onDeleteTaskClick}
-        onAddTaskClick = {onAddTaskClick}
         />
       </div>
     </div>
